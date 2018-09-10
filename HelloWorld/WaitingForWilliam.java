@@ -4,24 +4,29 @@
  * @version (2.0)
  */
 import java.util.*;
-class WaitingForWilliam
+import java.awt.event.KeyEvent;
+public class WaitingForWilliam
 {
+   static int x = 0;
    public static void main()
    {
       int millis, second, minute, hour;
       int x = 0;
       System.out.print("\f");
       System.out.println("Initiating...");
-      try{
-             Thread.sleep(1000);
-             x++;
-            }
-         catch(InterruptedException e){}
-      while(x < 5000){//five seconds
-         try{
-             Thread.sleep(1);
-             x++;
-            }
+      try
+      {
+         Thread.sleep(1000);
+         x++;
+      }
+      catch(InterruptedException e){}
+      while(x < 5000)
+      {//five seconds
+         try
+         {
+            Thread.sleep(1);
+            x++;
+         }
          catch(InterruptedException e){}
          System.out.print("\f");
          
@@ -35,19 +40,27 @@ class WaitingForWilliam
       }
       System.out.print("\f");
       System.out.println("Done");
-      try{
-             Thread.sleep(2000);
-             x++;
-            }
-         catch(InterruptedException e){}
+      try
+      {
+         Thread.sleep(2000);
+      }
+      catch(InterruptedException e){}
       System.out.print("\f");
       System.out.println("William");
-      try{
-             Thread.sleep(1500);
-             x++;
-            }
-         catch(InterruptedException e){}
+      try
+      {
+         Thread.sleep(1500);
+      }
+      catch(InterruptedException e){}
       System.out.print("\f");
       System.out.println("Are you there?");
+   }
+   public void keyTyped(KeyEvent e) 
+   {
+      if (e.getKeyCode() == 81) 
+      {
+         x = 5000;
+         System.out.println("William");
+      }
    }
 }
