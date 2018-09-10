@@ -1,17 +1,23 @@
 /**
  * Program designed to print time and refresh every second.
  * @author (Seay Zagar)
- * @version (1.10)
+ * @version (2.0)
  */
 import java.util.*;
-class GetCurrentDateAndTime
+class WaitingForWilliam
 {
    public static void main()
    {
       int millis, second, minute, hour;
       int x = 0;
+      System.out.print("\f");
       System.out.println("Initiating...");
-      while(x < 10000){//ten seconds
+      try{
+             Thread.sleep(1000);
+             x++;
+            }
+         catch(InterruptedException e){}
+      while(x < 5000){//five seconds
          try{
              Thread.sleep(1);
              x++;
@@ -29,5 +35,19 @@ class GetCurrentDateAndTime
       }
       System.out.print("\f");
       System.out.println("Done");
+      try{
+             Thread.sleep(2000);
+             x++;
+            }
+         catch(InterruptedException e){}
+      System.out.print("\f");
+      System.out.println("William");
+      try{
+             Thread.sleep(1500);
+             x++;
+            }
+         catch(InterruptedException e){}
+      System.out.print("\f");
+      System.out.println("Are you there?");
    }
 }
